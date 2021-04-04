@@ -361,7 +361,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199868541}
-  m_LocalRotation: {x: -0.035415556, y: 0.1652174, z: 0.005936736, w: 0.9856033}
+  m_LocalRotation: {x: -0.035179608, y: 0.20049123, z: 0.007204224, w: 0.97903717}
   m_LocalPosition: {x: 0, y: 1.5, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 941726304}
   - component: {fileID: 941726306}
   m_Layer: 0
-  m_Name: Free Cam
+  m_Name: FollowCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,7 +941,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045241689}
-  m_LocalRotation: {x: -0.0075408285, y: 0.16531916, z: 0.0012640711, w: 0.9862105}
+  m_LocalRotation: {x: -0.0074906, y: 0.2006147, z: 0.0015339525, w: 0.9796404}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1249,6 +1249,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Caracter
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fc1d30c7ac6fe4b3db332477a6c184a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fc1d30c7ac6fe4b3db332477a6c184a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fc1d30c7ac6fe4b3db332477a6c184a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1390,7 +1400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359519770}
-  m_LocalRotation: {x: 0.20392238, y: 0.16175133, z: -0.034183625, w: 0.9649268}
+  m_LocalRotation: {x: 0.20256384, y: 0.19628519, z: -0.041481793, w: 0.9584985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1431,14 +1441,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500487361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 182150d3b1e4f44e982fba027340035b, type: 3}
+  m_Script: {fileID: 11500000, guid: 404f5febf5b004a1b8746235316d2bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpVelocity: 20
-  airControlPercent: 0
-  speedSmoothTime: 0.1
-  turnSmoothTime: 0.1
+  fireButtonName: Fire1
+  jumpButtonName: Jump
+  moveHorizontalAxisName: Horizontal
+  moveVerticalAxisName: Vertical
+  reloadButtonName: Reload
 --- !u!114 &1500487364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,14 +1458,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500487361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404f5febf5b004a1b8746235316d2bf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 78bd62231b4e79549902d7f6880e4180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireButtonName: Fire1
-  jumpButtonName: Jump
-  moveHorizontalAxisName: Horizontal
-  moveVerticalAxisName: Vertical
-  reloadButtonName: Reload
+  speed: 6
+  jumpVelocity: 8
+  airControlPercent: 0.1
+  speedSmoothTime: 0.1
+  turnSmoothTime: 0.1
 --- !u!82 &1500487365
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1908,7 +1918,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909064270}
-  m_LocalRotation: {x: -0.03541555, y: 0.16521734, z: 0.0059367293, w: 0.9856033}
+  m_LocalRotation: {x: -0.035179604, y: 0.2004912, z: 0.0072042136, w: 0.9790372}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
