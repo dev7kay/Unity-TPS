@@ -91,6 +91,8 @@ public class Gun : MonoBehaviour
             lastFireTime = Time.time;
 
             Shot(fireTransform.position, fireDirection);
+            
+            return true;
         }
 
         return false;
@@ -154,6 +156,7 @@ public class Gun : MonoBehaviour
 
     public bool Reload()
     {
+        Debug.Log("Reload");
         if(state == State.Reloading || ammoRemain < 0 || magAmmo >= magCapacity)
             return false;
 

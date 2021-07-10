@@ -28,7 +28,11 @@ public class EffectManager : MonoBehaviour
           targetPrefab = fleshHitEffectPrefab;
       }
 
-      //var effect = insta
+      var effect = Instantiate(targetPrefab, pos, Quaternion.LookRotation(normal));
+
+      if(parent != null) effect.transform.SetParent(parent);
+
+      effect.Play();
   }
 
 }
