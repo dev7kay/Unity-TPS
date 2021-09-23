@@ -27,13 +27,13 @@ public class GameManager : MonoBehaviour
         if (!isGameover)
         {
             score += newScore;
-            //UIManager.Instance.UpdateScoreText(score);
+            UIManager.Instance.UpdateScoreText(score);
         }
     }
     
     public void EndGame()
     {
         isGameover = true;
-        //UIManager.Instance.SetActiveGameoverUI(true);
+        UIManager.Instance.SetActiveGameoverUI(true);
     }
 }

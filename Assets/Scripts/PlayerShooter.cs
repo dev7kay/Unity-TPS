@@ -119,7 +119,6 @@ public class PlayerShooter : MonoBehaviour
 
     public void Reload()
     {
-        Debug.Log("PlayerShooter:Reload()");
         if(gun.Reload())
         {
             playerAnimator.SetTrigger("Reload");
