@@ -88,8 +88,8 @@ GameObject:
   - component: {fileID: 4607950341564650}
   - component: {fileID: 135478876175241966}
   - component: {fileID: 108751749025666960}
-  - component: {fileID: 7280796228036135253}
-  - component: {fileID: 7785884255247763568}
+  - component: {fileID: 8485858811251887387}
+  - component: {fileID: 8970855582281817851}
   m_Layer: 0
   m_Name: HealthPack
   m_TagString: Untagged
@@ -185,7 +185,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &7280796228036135253
+--- !u!114 &8485858811251887387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,20 +194,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838412652947266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fc047d6b95041209056067c6f5e9ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
---- !u!114 &7785884255247763568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838412652947266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9ce62f0eddb242589f158762d487d45, type: 3}
+  m_Script: {fileID: 11500000, guid: d463bbd8016e6184285811487960fb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 60
+--- !u!114 &8970855582281817851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838412652947266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759889a2f4d85364db1c250d85312e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50

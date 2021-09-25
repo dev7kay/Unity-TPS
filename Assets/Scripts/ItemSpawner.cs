@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject[] Items;
+    public GameObject[] items;
     public Transform playerTransform;
 
     private float lastSpawnTime;
@@ -16,30 +16,30 @@ public class ItemSpawner : MonoBehaviour
     public float timeBetSpawnMax = 7f;
     public float timeBetSpawnMin = 2f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         timeBetSpawn = Random.Range(timeBetSpawnMin, timeBetSpawnMax);
         lastSpawnTime = 0f;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(Time.time >= lastSpawnTime + timeBetSpawn && playerTransform != null)
         {
-            Spawn();
             lastSpawnTime = Time.time;
-            timeBetSpawn = Random.Range(timeBetSpawnMin, timeBetSpawnMax);    
+            timeBetSpawn = Random.Range(timeBetSpawnMin, timeBetSpawnMax);
+            Spawn();
         }
     }
 
     private void Spawn()
     {
-        Vector3 spawnPosition = Utility.GetRandomPointOnNavMesh(playerTransform.position, maxDistance, NavMesh.AllAreas);
+        var spawnPosition = Utility.GetRandomPointOnNavMesh(playerTransform.position, maxDistance, NavMesh.AllAreas);
 
         spawnPosition += Vector3.up * 0.5f;
         
-        var item = Instantiate(Items[Random.Range(0, Items.Length)], spawnPosition, Quaternion.identity);
+        var item = Instantiate(items[Random.Range(0, items.Length)], spawnPosition, Quaternion.identity);
         Destroy(item, 5f);
     }
 }

@@ -1,0 +1,78 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class PlayerController : MonoBehaviour
+{
+    private Animator animator;
+    public AudioClip itemPickupClip;
+    public int lifeRemains = 3;
+    private AudioSource playerAudioPlayer;
+    private PlayerHealth playerHealth;
+    private PlayerMovement playerMovement;
+    private PlayerShooter playerShooter;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+        playerShooter = GetComponent<PlayerShooter>();
+        playerAudioPlayer = GetComponent<AudioSource>();
+        playerHealth = GetComponent<PlayerHealth>();
+
+        playerHealth.OnDeath += HandleDeath;
+
+        UIManager.Instance.UpdateLifeText(lifeRemains);
+        Cursor.visible = false;    
+    }
+
+    private void HandleDeath()
+    {
+        playerMovement.enabled = false;
+        playerShooter.enabled = false;
+
+        if(lifeRemains > 0)
+        {
+            lifeRemains--;
+            UIManager.Instance.UpdateLifeText(lifeRemains);
+            Invoke("Respawn", 3f);
+        }
+        else
+        {
+            GameManager.Instance.EndGame();
+        }
+
+        Cursor.visible = true;
+    }
+
+    public void Respawn()
+    {
+        gameObject.SetActive(false);
+        transform.position = Utility.GetRandomPointOnNavMesh(transform.position, 30f, NavMesh.AllAreas);
+
+        gameObject.SetActive(true);
+        playerMovement.enabled = true;
+        playerShooter.enabled = true;
+
+        playerShooter.gun.ammoRemain = 120;
+
+        Cursor.visible = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(playerHealth.dead)
+        {
+            return;
+        }
+
+        var item = other.GetComponent<IItem>();
+
+        if(item != null)
+        {
+            item.Use(gameObject);
+            playerAudioPlayer.PlayOneShot(itemPickupClip);
+        }
+    }
+}
